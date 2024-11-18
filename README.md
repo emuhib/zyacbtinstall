@@ -24,4 +24,12 @@ sudo bash setup_lamp_cbt_interactive.sh
 
 ### 4. Masukkan username dan password untuk pengguna MySQL saat diminta.
 
+### 5. Rename ke cbt dan Unggah File CBT dari Mas Lutfi melalui SCP.
+```
+Unggah File ke folder /var/www/html/
+```
+### 6. Extract file CBT
+Jalankan dengan perintah berikut:
+```bash
+sudo 7z x /var/www/html/cbt.7z -o/var/www/html/
 ```
