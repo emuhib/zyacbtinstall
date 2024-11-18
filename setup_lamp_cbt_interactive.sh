@@ -16,6 +16,10 @@ sudo apt install mysql-server -y
 echo "Installing PHP and necessary modules..."
 sudo apt install php libapache2-mod-php php-mysql php-cli php-curl php-xml php-zip -y
 
+# Install p7zip
+echo "Installing p7zip..."
+sudo apt install p7zip-full -y
+
 # Prompt for MySQL user and password
 echo "Please provide the MySQL database user and password for the CBT system."
 
@@ -33,4 +37,4 @@ FLUSH PRIVILEGES;
 EXIT;
 MYSQL_SCRIPT
 
-echo "LAMP Stack setup and MySQL configuration completed!"
+echo "LAMP Stack setup, p7zip installation, and MySQL configuration completed!"
