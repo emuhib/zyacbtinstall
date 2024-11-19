@@ -1,7 +1,7 @@
 # zyacbtinstall
 Untuk Install ZYA CBT
 
-### 1. Unduh dan Instal File Installer
+### 1. Unduh dan Instal LAMP Stack di Server
 Jalankan perintah berikut untuk mengunduh installer:
 
 ```bash
@@ -57,31 +57,7 @@ sudo chown -R www-data:www-data /var/www/html && sudo find /var/www/html -type d
 ```bash
 sudo systemctl restart apache2
 ```
-
-# TERAKHIR MENGATUR ONLY FULL GRUP MYSQL
-
-### 1. Login ke MySQL
-```bash
-mysql -u root -p
-```
-### 2. Periksa Mode SQL Aktif
-```bash
-SELECT @@sql_mode;
-```
-### 3. Nonaktifkan Mode ONLY FOR GROUP BY
-```bash
-SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
-```
-### 4. Verifikasi Perubahan Mode ONLY FOR GROUP BY
-```bash
-SELECT @@sql_mode;
-```
-### 5. Exit
-```bash
-EXIT;
-```
-Saat ini sudah bisa digunakan tapi jika server MySQL Restart maka akan terjadi error lagi, Untuk menanggulangi hal itu ikuti langkah berikut ini:
-
+# Terakhir edit Konfigurasi MySQL
 ### 1. Edit File Konfigurasi MySQL
 ```bash
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
